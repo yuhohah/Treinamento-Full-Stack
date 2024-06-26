@@ -1,0 +1,63 @@
+<!DOCTYPE html><html lang="pt-br">
+    <head>
+        <title>Cadastro</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+        <link rel="stylesheet" href="style.css"/>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+        <script src="./script.js"></script>
+    </head>
+    <body>
+        <div class="form" id="form">
+            <h2>Cadastro de Usuário</h2>
+            <form class="form" id="forms" autocomplete="on">
+                
+                <label for="inputName">Nome:</label><br>
+                <input type="text" id="inputName" class="captcha" required placeholder="Joao Domingues" name="name"><br>
+                <label for="inputTel">Telefone:</label><br>
+                <input type="tel" id="inputTel" class="captcha" required inputmode="numeric" placeholder="(62)96445-2518"  name="telefone">
+                <label for="inputCpf">CPF:</label><br>
+                <input type="" inputmode="numeric" required inputmode="numeric" id="inputCpf" name="cpf" class="captcha" placeholder="652.425.632-51">
+                <label for="inputEmail">Email:</label><br>
+                <input type="email" id="inputEmail" class="captcha" required placeholder="joaooo3@email.com" name="email">
+                <label for="inputEndereco">Endereço:</label><br>
+                <input type="text" id="inputEndereco" class="captcha" required placeholder="Rua Marte, 480" name="endereco">
+                
+                <h4 for="contact" class="contact">Contato 1:</h4>
+
+                <label for="inputName1">Nome:</label><br>
+                <input type="text" id="inputName1" class="captcha" required placeholder="Amanda Alves" name="nameContato1"><br>
+                <label for="inputTel1">Telefone:</label><br>
+                <input type="tel" id="inputTel1" class="captcha" required inputmode="numeric" placeholder="(35)96532-4568"  name="telefoneContato2">
+                <label for="inputEmail1">Email:</label><br>
+                <input type="email" id="inputEmail1" class="captcha" required placeholder="amandnog@email.com" name="emailContato1">
+                
+                <h4 for="contact" class="contact">Contato 2:</h4>
+
+                <label for="inputName2">Nome:</label><br>
+                <input type="text" id="inputName2" class="captcha" required placeholder="Thomas Shelby" name="nameContato2"><br>
+                <label for="inputTel2">Telefone:</label><br>
+                <input type="tel" id="inputTel2" class="captcha" required inputmode="numeric" placeholder="(11)98564-2183"  name="telefoneContato2">
+                <label for="inputEmail2">Email:</label><br>
+                <input type="email" id="inputEmail2" class="captcha" required placeholder="shelbythom@email.com" name="emailContato2">
+
+            </form>
+            <form class="form">
+                <button type="button" class="buton" id="buttonAdd" >Adicionar Contato</button>
+                <button class="buton" id="buttonSend" >Enviar</button>
+            </form>
+            
+            <table border="1" id="tabela" class="tabela">
+                <thead>
+                    <th>Nome</th>
+                    <th>Email</th>
+                    <th>CPF</th>
+                    <th>Editar</th>
+                    <th>Excluir</th>
+                </thead>
+            </table>
+        </div>
+    </body>
+</html>
