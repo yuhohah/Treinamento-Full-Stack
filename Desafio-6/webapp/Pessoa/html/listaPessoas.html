@@ -1,0 +1,30 @@
+<div >
+    <table class="table table-bordered table-hover border-danger table-dark">
+        <thead>
+        <tr>
+            <th scope="col">Nome</th>
+            <th scope="col">CPF</th>
+            <th scope="col">Email</th>
+            <th scope="col">Select</th>
+        </tr>
+        </thead>
+        <tbody class="table-group-divider">
+
+        <tr ng-class="{selecionado: pessoa.selecionado}" ng-repeat="pessoa in cadastros">
+
+            <td><a href="#!/perfilPessoa/{{pessoa.id}}" class="link-light link-offset-2 link-underline-opacity-25 link-underline-opacity-75-hover">{{pessoa.nome}}</a></td>
+            <td>{{pessoa.cpf}}</td>
+            <td>{{pessoa.email}}</td>
+            <td>
+                <div class="form-check my-1 ">
+                    <input class="form-check-input mx-0 " type="checkbox" ng-model="pessoa.selecionado" id="flexCheckDefault">
+                    <label class="form-check-label" for="flexCheckDefault">
+                    </label>
+                </div>
+            </td>
+        </tr>
+
+        </tbody>
+    </table>
+    <button type="button" class="btn btn-danger" ng-click="removerCadastros(cadastros)">Excluir Cadastros</button>
+</div>

@@ -1,0 +1,22 @@
+<nav class="navbar navbar-expand-sm bg-secondary" ng-controller="navbarController">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#!/listaPessoas">Lista de Cadastros</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#!/cadastroPessoa">Cadastrar Pessoa</a>
+                </li>
+                <!--<li class="nav-item">
+                    <a class="nav-link active" href="#!/listaPessoas">Listar Cadastros</a>
+                </li>-->
+            </ul>
+            <form class="d-flex"  role="search">
+                <input class="form-control me-2 bg-secondary border-light" type="search" placeholder="Search" aria-label="Search" ng-model="buscaPessoaId">
+                <button class="btn btn-light" type="submit" ng-click="buscarPessoaId(buscaPessoaId)">Buscar Cadastro</button>
+            </form>
+        </div>
+    </div>
+</nav>

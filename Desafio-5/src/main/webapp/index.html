@@ -1,0 +1,78 @@
+<!DOCTYPE html><html lang="pt-br">
+    <head>
+        <title>Cadastro</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+        <link rel="stylesheet" href="css/style.css"/>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+        <script src="js/script.js"></script>
+        <script src="js/receiver.js"></script>
+        <script src="js/mascaras.js"></script>
+    </head>
+    <body>
+        <div class="form" id="form">
+            <h2>Cadastro de Usuário</h2>
+            <form class="form" id="forms" >
+                
+                <label for="inputName">Nome:</label><br>
+                <input type="text" id="inputName" class="captcha" required placeholder="Joao Domingues" name="name"><br>
+                <label for="inputTel">Telefone:</label><br>
+                <input type="tel" id="inputTel" class="captcha" required placeholder="(62)96445-2518" maxlength="15" name="telefone">
+                <label for="inputCpf">CPF:</label><br>
+                <input type="text" required inputmode="numeric" id="inputCpf" name="cpf" class="captcha" maxlength="14" placeholder="652.425.632-51">
+                <label for="inputEmail">Email:</label><br>
+                <input type="email" id="inputEmail" class="captcha" required placeholder="joaooo3@email.com" name="email">
+
+                <h4 for="endereco" class="endereco">Endereco:</h4>
+
+                <label for="inputBairro">Bairro:</label><br>
+                <input type="text" id="inputBairro" class="captcha" required placeholder="Jardim Goias" name="endereco">
+                <label for="inputRua">Rua:</label><br>
+                <input type="text" id="inputRua" class="captcha" required placeholder="Rua Marte" name="endereco">
+                <label for="inputNumero">Numero:</label><br>
+                <input type="text" id="inputNumero" class="captcha" required placeholder="480" maxlength="5" name="endereco">
+                <label for="inputCep">CEP:</label><br>
+                <input type="text" id="inputCep" class="captcha" required placeholder="74620190" maxlength="9" name="endereco">
+                
+                <h4 for="contact" class="contact">Contato 1:</h4>
+
+                <label for="inputName1">Nome:</label><br>
+                <input type="text" id="inputName1" class="captcha" required placeholder="Amanda Alves" name="nameContato1"><br>
+                <label for="inputTel1">Telefone:</label><br>
+                <input type="tel" id="inputTel1" class="captcha" required placeholder="(35)96532-4568" maxlength="15" name="telefoneContato2">
+                <label for="inputEmail1">Email:</label><br>
+                <input type="email" id="inputEmail1" class="captcha" required placeholder="amandnog@email.com" name="emailContato1">
+                
+                <h4 class="contact">Contato 2:</h4>
+
+                <label for="inputName2">Nome:</label><br>
+                <input type="text" id="inputName2" class="captcha" required placeholder="Thomas Shelby" name="nameContato2"><br>
+                <label for="inputTel2">Telefone:</label><br>
+                <input type="tel" id="inputTel2" class="captcha" required placeholder="(11)98564-2183" maxlength="15" name="telefoneContato2">
+                <label for="inputEmail2">Email:</label><br>
+                <input type="email" id="inputEmail2" class="captcha" required placeholder="shelbythom@email.com" name="emailContato2">
+
+            </form>
+            <form class="form">
+                <button type="button" class="buton" id="buttonAdd" >Adicionar Contato</button>
+                <button class="buton" id="buttonSend" >Enviar</button>
+                <button class="buton" id="buttonList" >Listar</button>
+            </form>
+            
+            <table border="1" id="tabela" class="tabela">
+                <thead>
+                    <th>Nome</th>
+                    <th>Email</th>
+                    <th>CPF</th>
+                    <th>Editar</th>
+                    <th>Excluir</th>
+                </thead>
+                <tbody id="itemsTabela">
+
+                </tbody>
+            </table>
+        </div>
+    </body>
+</html>

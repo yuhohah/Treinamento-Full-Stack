@@ -1,0 +1,29 @@
+<form name="cadastroForm">
+    <div>
+        <h6>Contato</h6>
+
+        <div ng-include="'/home/html/alerts.html'"></div>
+
+        <div class="input-group input-group mb-3">
+            <span class="input-group-text" id="inputContatoNome">Nome</span>
+            <input type="text" ng-model="contato.nome" class="form-control" aria-label="Sizing example input" aria-describedby="inputContatoNome" ng-required="true" name="nome">
+        </div>
+        <div class="input-group input-group mb-3">
+            <span class="input-group-text" id="inputContatoEmail">Email</span>
+            <input type="text" ng-model="contato.email" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" ng-required="true" name="email">
+        </div>
+        <div class="input-group input-group mb-3">
+            <span class="input-group-text" id="inputContatoTelefone">Telefone</span>
+            <input type="text" ng-model="contato.telefone" ui-br-phone-number-mask="areaCode" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" ng-required="true"  name="telefone">
+        </div>
+
+        <div ng-if="contato.id === undefined">
+            <button type="button" class="btn btn-info" ng-click="salvarContato(contato)">Adicionar Contato</button>
+            <button type="button" class="btn btn-info" ng-click="cancelar()">Cancelar</button>
+        </div>
+        <div ng-if="contato.id != null">
+            <button type="button" class="btn btn-info" ng-click="editContato(contato)">Salvar Alteracoes</button>
+            <button type="button" class="btn btn-danger" ng-click="removeContato(contato.id)">Excluir</button>
+        </div>
+    </div>
+</form>

@@ -1,0 +1,77 @@
+<div class="container text-center">
+    <div class="row">
+        <div class="col">
+            <form name="cadastroForm">
+
+                <div ng-include="'/home/html/alerts.html'"></div>
+
+                <div class="mb-3 mt-4">
+                    <label for="inputNome" class="form-label fs-6 fw-bolder">Nome</label>
+                    <input type="text" name="nome" ng-model="pessoa.nome" class="form-control w-75 mx-auto bg-white text-dark" id="inputNome" placeholder="Nome Sobrenome" ng-required="true" ng-minlength="10">
+                </div>
+                <div input-mail>
+                    </div>
+                <div class="mb-3">
+                    <label for="inputCpf"  class="form-label fs-6 fw-bolder">CPF</label>
+                    <input type="text" name="cpf" ng-model="pessoa.cpf" ui-br-cpf-mask class="form-control w-75 mx-auto bg-white" id="inputCpf" placeholder="123.456.789-52" ng-required="true" ng-minlength="11" ng-maxlength="14">
+                </div>
+                <div class="mb-3">
+                    <label for="inputTelefone" class="form-label fs-6 fw-bolder">Telefone</label>
+                    <input type="text" name="telefone" ng-model="pessoa.telefone" ui-br-phone-number-mask="areaCode" class="form-control w-75 mx-auto bg-white" id="inputTelefone" placeholder="(55) 1234-5896" ng-required="true" ng-minlength="10" ng-maxlength="15">
+                </div>
+                <div class="mb-3">
+                    <label for="inputCep" class="form-label fs-6 fw-bolder">CEP</label>
+                    <input type="text" name="cep" ng-model="pessoa.endereco.cep" ui-br-cep-mask class="form-control w-75 mx-auto bg-white" id="inputCep" placeholder="85962-120" ng-required="true" ng-minlength="8" ng-maxlength="10">
+                </div>
+                <div class="mb-3">
+                    <label for="inputBairro" class="form-label fs-6 fw-bolder">Bairro</label>
+                    <input type="text" name="bairro" ng-model="pessoa.endereco.bairro" class="form-control w-75 mx-auto bg-white" id="inputBairro" placeholder="Jardim Novo Mundo" ng-required="true" ng-minlength="5">
+                </div>
+                <div class="mb-3">
+                    <label for="inputRua" class="form-label fs-6 fw-bolder">Rua</label>
+                    <input type="text" name="rua" ng-model="pessoa.endereco.rua" class="form-control w-75 mx-auto bg-white" id="inputRua" placeholder="Mariguella" ng-required="true" ng-minlength="5">
+                </div>
+                <div class="mb-3">
+                    <label for="inputNumero" class="form-label fs-6 fw-bolder">Número</label>
+                    <input type="text" name="numero" ng-model="pessoa.endereco.numero" class="form-control w-75 mx-auto bg-white" id="inputNumero" placeholder="142" ng-required="true" ng-minlength="1">
+                </div>
+
+                <div ng-if="pessoa.id != null">
+                    <button type="button" class="btn btn-light w-25 mt-4 mb-4" ng-disabled="!cadastroForm.$dirty || cadastroForm.$invalid" ng-click="enviarCadastro(pessoa)">Salvar</button>
+                </div>
+                <div ng-if="pessoa.id === undefined">
+                    <button type="button" class="btn btn-light w-25 mt-4 mb-4" ng-click="enviarCadastro(pessoa)" ng-disabled="cadastroForm.$invalid">Enviar</button>
+                </div>
+
+            </form>
+        </div>
+        <div class="col" ng-if="pessoa.hasOwnProperty('id')">
+
+                <table class="table table-bordered table-hover table-dark border-secondary table-dark m-5">
+                    <thead>
+                    <tr>
+                        <th scope="col">Nome</th>
+                        <th scope="col">Telefone</th>
+                        <th scope="col">Email</th>
+                    </tr>
+                    </thead>
+                    <tbody class="table-group-divider">
+                    <tr ng-repeat="contato in contatos">
+                        <td><a href="#!/perfilContato/pessoa/{{pessoa.id}}/contato/{{contato.id}}" class="link-light link-offset-2 link-underline-opacity-25 link-underline-opacity-75-hover">{{contato.nome}}</a></td>
+                        <td>{{contato.telefone}}</td>
+                        <td>{{contato.email}}</td>
+                    </tr>
+                    </tbody>
+                </table>
+
+                <button type="button" class="btn btn-light me-3 " ng-click="cancelar()">Voltar</button>
+                <button type="button" class="btn btn-primary" ng-click="criarContato()">Adicionar Contato</button>
+
+
+
+            <div class="mt-3">
+                <button type="button" class="btn btn-danger" ng-click="removerCadastro()">Deletar Cadastro</button>
+            </div>
+        </div>
+    </div>
+</div>

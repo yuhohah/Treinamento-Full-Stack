@@ -1,0 +1,85 @@
+<div>
+    <div ng-messages="cadastroForm.nome.$error" class="alert alert-danger" ng-if="cadastroForm.nome.$touched && cadastroForm.nome.$invalid">
+        <div  ng-message="required">
+            O Campo nome é obrigátorio.
+        </div>
+        <div  ng-message="minlength">
+            O Campo nome deve ter no minimo 10 caracteres.
+        </div>
+
+    </div>
+    <div ng-messages="cadastroForm.email.$error" class="alert alert-danger" ng-if="cadastroForm.email.$touched && cadastroForm.email.$invalid">
+        <div  ng-message="required">
+            O Campo email é obrigátorio.
+        </div>
+        <div  ng-message="minlength">
+            O Campo email deve ter no minimo 10 caracteres.
+        </div>
+        <div ng-message="email">
+            O Campo email deve conter um email.
+        </div>
+    </div>
+    <div ng-messages="cadastroForm.cpf.$error" class="alert alert-danger" ng-if="cadastroForm.cpf.$touched && cadastroForm.cpf.$invalid">
+        <div  ng-message="required">
+            O Campo CPF é obrigátorio.
+        </div>
+        <div  ng-message="minlength">
+            O Campo CPF deve ter no minimo 11 caracteres.
+        </div>
+        <div  ng-message="maxlength">
+            O Campo CPF deve ter no máximo 14 caracteres.
+        </div>
+        <div  ng-message="cpf">
+            O Campo CPF é inválido.
+        </div>
+    </div>
+    <div ng-messages="cadastroForm.telefone.$error" class="alert alert-danger" ng-if="cadastroForm.telefone.$touched && cadastroForm.telefone.$invalid">
+        <div  ng-message="required">
+            O Campo telefone é obrigátorio.
+        </div>
+        <div  ng-message="minlength">
+            O Campo telefone deve ter no minimo 14 caracteres.
+        </div>
+        <div  ng-message="maxlength">
+            O Campo telefone deve ter no máximo 15 caracteres.
+        </div>
+        <div  ng-message="pattern">
+            O Campo telefone deve ter o formato (DD)DDDDD-DDDD.
+        </div>
+    </div>
+    <div ng-messages="cadastroForm.cep.$error" class="alert alert-danger" ng-if="cadastroForm.cep.$touched && cadastroForm.cep.$invalid">
+        <div  ng-message="required">
+            O Campo cep é obrigátorio.
+        </div>
+        <div  ng-message="minlength">
+            O Campo cep deve ter no minimo 8 caracteres.
+        </div>
+        <div  ng-message="maxlength">
+            O Campo cep deve ter no máximo 10 caracteres.
+        </div>
+    </div>
+    <div ng-messages="cadastroForm.bairro.$error" class="alert alert-danger" ng-if="cadastroForm.bairro.$touched && cadastroForm.bairro.$invalid">
+        <div  ng-message="required">
+            O Campo bairro é obrigátorio.
+        </div>
+        <div  ng-message="minlength">
+            O Campo bairro deve ter no minimo 5 caracteres.
+        </div>
+    </div>
+    <div ng-messages="cadastroForm.rua.$error" class="alert alert-danger" ng-if="cadastroForm.rua.$touched && cadastroForm.rua.$invalid">
+        <div  ng-message="required">
+            O Campo rua é obrigátorio.
+        </div>
+        <div  ng-message="minlength">
+            O Campo rua deve ter no minimo 5 caracteres.
+        </div>
+    </div>
+    <div ng-messages="cadastroForm.numero.$error" class="alert alert-danger" ng-if="cadastroForm.numero.$touched && cadastroForm.numero.$invalid">
+        <div  ng-message="required">
+            O Campo numero é obrigátorio.
+        </div>
+        <div  ng-message="minlength">
+            O Campo numero deve ter no minimo 1 caracteres.
+        </div>
+    </div>
+</div>

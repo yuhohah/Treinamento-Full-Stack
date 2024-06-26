@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html ng-app="application" lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <title>Projeto</title>
+
+        <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+
+        <script src="../node_modules/angular/angular.js"></script>
+        <script src="./lib/angular-messages.js"></script>
+        <script src="../node_modules/angular-route/angular-route.js"></script>
+        <script src="../node_modules/angular-locale-pt-br/angular-locale_pt-br.js"></script>
+        <script src="../node_modules/angular-input-masks/releases/angular-input-masks-standalone.min.js"></script>
+
+        <script src="./config/application.js"></script>
+        <script src="./config/routeConfig.js"></script>
+        <script src="./home/js/navbarController.js"></script>
+        <script src="config/interceptor/interceptorsConfig.js"></script>
+        <script src="config/interceptor/errorInterceptor.js"></script>
+        <script src="config/interceptor/loadingInterceptor.js"></script>
+        <script src="config/directives/inputDirective.js"></script>
+
+        <script src="./Pessoa/js/cadastroFactory.js"></script>
+        <script src="./Pessoa/js/listaPessoasController.js"></script>
+        <script src="./Pessoa/js/cadastroPessoaController.js"></script>
+        <script src="./Pessoa/js/perfilPessoaController.js"></script>
+
+        <script src="./Contato/js/editContatoController.js"></script>
+        <script src="./Contato/js/contatoFactory.js"></script>
+        <script src="./Contato/js/cadastroContatoController.js"></script>
+
+    </head>
+    <body class="bg-secondary">
+        <div class="container text-center">
+            <div class="row flex-row">
+                <div ng-include="'./home/html/navbar.html'"></div>
+                <div class="col mt-3 px-4">
+                    <div>
+                        <h1 class="fs-2 fw-bold">
+                        </h1>
+                    </div>
+
+                    <div ng-show="loading">
+                        <img src="./lib/Rolling-0.4s-184px.svg" class="img-fluid" alt="...">
+                    </div>
+
+                    <div class="row mt-3 px-4" ng-hide="loading">
+                        <div ng-view></div>
+                        <div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
